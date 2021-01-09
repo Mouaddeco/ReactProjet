@@ -1,0 +1,51 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.sigapp">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme">
+      <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+       <meta-data
+         android:name="com.google.android.geo.API_KEY"
+         android:value="AIzaSyBFlYTsAEtEjE0j_9WSjscna6OpI_jyGIo"/>
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:launchMode="singleTask"
+        android:windowSoftInputMode="adjustResize">
+       
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+      </activity>
+      <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+    </application>
+
+</manifest>
+
+ <!--  const getData = () => {
+ //Initialize the module (needs to be done only once)
+     Geocoder.init("AIzaSyCBp6eG9re8KmFRfV_sSyrccojGAcMV2Sg"); // use a valid API key
+    // With more options
+   Geocoder.init("xxxxxxxxxxxxxxxxxxxxxxxxx", {language : "en"}); // set the language
+
+  //   // Search by geo-location (reverse geo-code)
+     Geocoder.from(41.89, 12.49)
+     .then(json => {
+             var addressComponent = json.results[0].address_components[0];
+       console.log(addressComponent);
+     })
+     .catch(error => console.warn(error));
+   } -->
